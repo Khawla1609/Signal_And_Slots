@@ -1,37 +1,123 @@
-## Welcome to GitHub Pages
+# Signal and Slots
 
-You can use the [editor on GitHub](https://github.com/Khawla1609/Signal_And_Slots/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<!-- link of TP -->
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+you can access the tp from then the following link [TP Signal and Slots](https://anassbelcaid.github.io/CS311/calculator/) 
 
-### Markdown
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+     <li class="list-group-item"> <a href="#Calculator">Calculator </a></li>
+    <ul>
+        <li><a href="#Setup">Setup</a></li>
+        <li><a href="#Custom Slots">Custom Slots</a></li>
+        <li><a href="#Digits Interaction">Digits Interaction</a></li>
+        <li><a href="#Integer numbers">Integer numbers</a></li>
+        <li><a href="#Operation Interaction">Operation Interaction</a></li>
+        <li><a href="#Enter Button">Enter Button</a></li>
+        <li><a href="#Enhancements">Enhancements</a></li>
+      </ul>
+    <li><a href="#Traffic Light">Traffic Light</a></li>
+    <li><a href="#Digital Clock">Digital Clock</a></li>
+    
+    
+     
+  </ol>
+</details>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### Digital Clock
 
-# Header 1
-## Header 2
-### Header 3
+you will find below the three main classes of the code concerned Digital Clock.
+the concept of this part is to run a current time using some special function ;
 
-- Bulleted
-- List
+**.Header**
+```cpp
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-1. Numbered
-2. List
+#include <QMainWindow>
+#include"QTime"
+#include"QLCDNumber"
+#include"QTimerEvent"
+#include"QHBoxLayout"
+QT_BEGIN_NAMESPACE
 
-**Bold** and _Italic_ and `Code` text
+class MainWindow : public QWidget
+{
+    Q_OBJECT
 
-[Link](url) and ![Image](src)
+public:
+    MainWindow(QWidget *parent = nullptr);
+
+protected:
+void updateTime();
+//void timeEvent(QTimerEvent *e)override;
+void createwidget();
+void placewidget();
+void timerEvent(QTimerEvent *e)override;
+private:
+
+    QLCDNumber *hour;
+    QLCDNumber *minute;
+    QLCDNumber *second;
+
+};
+#endif // MAINWINDOW_H
+```
+**.cpp**
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent):QWidget(parent)
+
+{
+
+    createwidget();
+placewidget();
+updateTime();
+startTimer(1000);
+}
+void MainWindow::createwidget(){
+    hour=new QLCDNumber;
+    hour->setDigitCount(2);
+    minute=new QLCDNumber;
+    minute->setDigitCount(2);
+    second=new QLCDNumber;
+    second->setDigitCount(2);
+}
+void MainWindow::placewidget(){
+    QLayout *layout = new QHBoxLayout;
+    setLayout(layout);
+    layout->addWidget(hour);
+     layout->addWidget(minute);
+      layout->addWidget(second);
+}
+void MainWindow::updateTime(){
+    auto T=QTime::currentTime();
+    hour->display(T.hour());
+     minute->display(T.minute());
+      second->display(T.second());
+}
+
+void MainWindow::timerEvent(QTimerEvent *e){
+    updateTime();
+}
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+ **main**
+ ```cpp
+ #include "mainwindow.h"
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Khawla1609/Signal_And_Slots/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#include <QApplication>
+#include"mainwindow.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow *w=new MainWindow;
+    w->show();
+    return a.exec();
+}
+ ```
+ 
