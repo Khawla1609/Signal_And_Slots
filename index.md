@@ -121,3 +121,11 @@ int main(int argc, char *argv[])
 }
  ```
  
+### Traffic Light
+
+The goal of the exercice is learn to,use the QTimer to simulate a traffic light  **Traffic Light**
+
+   <p align="center">
+    <img src="images/Traffic Light.png">
+   </p>  
+   <h2 align="center"> Traffic Light.</h2>
