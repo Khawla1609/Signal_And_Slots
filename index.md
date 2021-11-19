@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 The goal of the exercice is learn to,use the QTimer to simulate a traffic light  **Traffic Light**
 
    <p align="center">
-    <img src="images/Traffic Light.png">
+    <img src="TrafficLight.PNG">
    </p>  
    <h2 align="center"> Traffic Light.</h2>
 
@@ -336,7 +336,7 @@ int main(int argc, char *argv[])
   This exercise follows up to add interactive functionality to the calculator widgets written in the previous homework. The goal is to use Signals and Slots to simulate a basic calculator behavior. The supported operations are *, +, -, /.
 
    <p align="center">
-    <img src="images/calculator.png">
+    <img src="calculatrice.PNG">
    </p>  
    <h2 align="center"> calculator.</h2>
 
