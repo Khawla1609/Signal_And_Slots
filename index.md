@@ -331,6 +331,16 @@ int main(int argc, char *argv[])
 
 ```
 
+### calculator
+ 
+  This exercise follows up to add interactive functionality to the calculator widgets written in the previous homework. The goal is to use Signals and Slots to simulate a basic calculator behavior. The supported operations are *, +, -, /.
+
+   <p align="center">
+    <img src="images/calculator.png">
+   </p>  
+   <h2 align="center"> calculator.</h2>
+
+
 **.Header**
 
 ```cpp
@@ -622,4 +632,5 @@ int main(int argc, char *argv[])
 }
 
 ```
- 
+
+
