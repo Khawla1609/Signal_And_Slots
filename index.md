@@ -120,6 +120,8 @@ int main(int argc, char *argv[])
     return a.exec();
 }
  ```
+ The result :
+ 
  https://user-images.githubusercontent.com/93408621/142759272-6ecd33d3-a205-485a-8bb5-ed18f48abcb9.mp4
 
  
@@ -332,6 +334,9 @@ int main(int argc, char *argv[])
 }
 
 ```
+The result :
+
+https://user-images.githubusercontent.com/93408621/142765043-ef2d4f40-c389-441a-9c5d-6b1daf626ad0.mp4
 
 ### calculator
  
@@ -634,6 +639,8 @@ int main(int argc, char *argv[])
 }
 
 ```
+The result :
+
 https://user-images.githubusercontent.com/93408621/142764864-d191f6a0-701f-4ad9-a9df-29a27f57605e.mp4
 
 
