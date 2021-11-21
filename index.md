@@ -120,6 +120,8 @@ int main(int argc, char *argv[])
     return a.exec();
 }
  ```
+ https://user-images.githubusercontent.com/93408621/142759272-6ecd33d3-a205-485a-8bb5-ed18f48abcb9.mp4
+
  
 ### Traffic Light
 
